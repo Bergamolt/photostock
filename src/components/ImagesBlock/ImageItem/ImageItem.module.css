@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  width: calc(100vw / 3 - 30px);
+  height: calc(100vw / 3 - 30px);
+  margin: 10px;
+  background-color: #000000;
+}
+
+@media screen and (max-width: 769px) {
+  .card {
+    width: calc(50% - 20px);
+    height: calc(100vw / 2 - 20px);
+  }
+}
