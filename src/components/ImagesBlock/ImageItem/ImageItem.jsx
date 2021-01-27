@@ -1,6 +1,7 @@
 import styles from './ImageItem.module.css';
 
 export const ImageItem = ({ url, onModal }) => {
+  
   const bg = {
     backgroundImage: `url('${url}')`,
     backgroundSize: 'cover',

@@ -6,3 +6,23 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.btn {
+  background-color: #000000;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}

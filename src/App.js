@@ -3,6 +3,8 @@ import { Footer } from './components/Footer/Footer';
 import { ImagesBlock } from './components/ImagesBlock/ImagesBlock';
 import { useEffect, useState } from 'react';
 import { createApi } from 'unsplash-js';
+import Loader from 'react-loader-spinner';
+import styles from './App.module.css';
 
 const ACCESS_KEY = 'M_5WdNK_Uk1FFlPtMnpid_VwcvAZrUGmlVukxEOFs1A';
 
@@ -11,26 +13,26 @@ const unsplash = createApi({
 });
 
 function App() {
-
   const [error, setError] = useState(null);
   const [images, setImages] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const getPhotos = (page = 1) => {
-    console.log(page);
     unsplash.photos
       .list({
         page: page,
-        perPage: 30
+        perPage: 30,
       })
-      .then((res) => {
-        setIsLoaded(true);
-        const imagesList = res.response;
-        setImages(imagesList.results);
-      }, (error) => {
-        debugger
-        setError(error);
-      })
+      .then(
+        (res) => {
+          setIsLoaded(true);
+          const imagesList = res.response;
+          setImages([...images, ...imagesList.results]);
+        },
+        (error) => {
+          setError(error);
+        }
+      )
       .catch((error) => setError(error));
   };
 
@@ -41,18 +43,19 @@ function App() {
   let content;
 
   if (error) {
-    content = (<div>{error}</div>);
+    content = <div>{error}</div>;
   } else if (!isLoaded) {
-    content = (<div>Loading</div>);
+    content = (
+      <Loader type="ThreeDots" color="#000000" height={80} width={80} />
+    );
   } else {
-    content = (<ImagesBlock images={images} onUpdatePage={getPhotos}/>)
+    content = <ImagesBlock images={images} onUpdatePage={getPhotos} />;
   }
-  console.log('done');
 
   return (
     <div>
-      <Header />
-      {content}
+      <Header id="header" />
+      <div className={styles.content}>{content}</div>
       <Footer />
     </div>
   );

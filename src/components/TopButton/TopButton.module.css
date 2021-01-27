@@ -1,0 +1,18 @@
+.btnTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  font-weight: 800;
+}
+
+/* .active {
+  display: block;
+} */
+
+.hide {
+  display: none;
+}
