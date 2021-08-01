@@ -1,19 +1,17 @@
 # PhotoStock:
 
-[GH-PAGES](https://bergamolt.github.io/photostock/)
+[GH-PAGES](https://bergamolt.github.io/calculator/)
 
 ## Использованы:
 
-+ React
-+ Rest API
-+ React Hooks
++ CSS
++ HTML
++ JS
++ GRID CSS
 
-## Сделано: 
+## Цель: 
 
-+ Работа с React Hooks
-+ Получение фотографий по Unsplash API
-+ Сортировка полученого обьекта
-
+Цель была поработать с классами в JS и с 
 
 
 

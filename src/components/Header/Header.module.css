@@ -1,10 +1,11 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   background-color: #000000;
   height: 70px;
-  padding-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header span {
